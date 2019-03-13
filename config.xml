@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.techstreet.utility" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Techstreet Utility</name>
+    <name>Techstreet</name>
     <description>
         A blank PhoneGap app.
     </description>
