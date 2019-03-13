@@ -1,0 +1,261 @@
+<template>
+  <div class="page">
+    <div class="navbar bg-color-white color-red">
+      <div class="navbar-inner sliding">
+        <div class="title"><img height="25" src="img/logo-xs.png" /></div>
+        <div class="right">
+          <a class="link icon-only" href="#">
+            <i class="icon material-icons">search</i>
+          </a>
+          <a href="#" data-popover=".dashboard-popover" class="popover-open link icon-only">
+            <i class="icon material-icons">more_vert</i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="popover dashboard-popover">
+      <div class="popover-inner">
+        <div class="list">
+          <ul>
+            <li><a class="color-black list-button item-link popover-close" href="#">Your activity</a></li>
+            <li><a class="color-black list-button item-link popover-close" href="#">Settings</a></li>
+            <li><a @click="logout" class="color-black list-button item-link popover-close" href="#">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="popover demo-popover">
+      <div class="popover-inner">
+        <div class="list">
+          <ul>
+            <li><a class="color-black list-button item-link popover-close" href="#">Share</a></li>
+            <li><a class="color-black list-button item-link popover-close" href="#">Report</a></li>
+            <li><a class="color-black list-button item-link popover-close" href="#">Mute</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="toolbar toolbar-bottom-md tabbar">
+      <div class="toolbar-inner">
+        <a href="/dashboard/" class="tab-link" data-route-tab-id="tab-1"><i class="icon material-icons">home</i></a>
+        <a href="/dashboard/tab-2/" class="tab-link" data-route-tab-id="tab-2"><i
+            class="icon material-icons">email</i></a>
+        <a href="/dashboard/tab-3/" class="tab-link" data-route-tab-id="tab-3"><i style="font-size: 34px;height: 34px;"
+            class="icon material-icons">add_box</i></a>
+        <a href="/dashboard/tab-4/" class="tab-link" data-route-tab-id="tab-4"><i
+            class="icon material-icons">notifications</i></a>
+        <a href="/dashboard/tab-5/" class="tab-link" data-route-tab-id="tab-5"><i
+            class="icon material-icons">person</i></a>
+      </div>
+    </div>
+    <div class="tabs tabs-routable">
+      <div class="tab page-content" id="tab-1">
+        <!-- <div id="stories"></div>
+        <div class="card no-margin demo-facebook-card no-box-shadow">
+          <div class="card-header">
+            <div class="demo-facebook-avatar"><img src="img/avatar.jpg" width="34" height="34" />
+            </div>
+            <div class="row">
+              <div>
+                <div class="demo-facebook-name">John Doe</div>
+                <div class="demo-facebook-date">Monday at 2:15 PM</div>
+              </div>
+              <div>
+                <a href="#" data-popover=".demo-popover" class="popover-open link icon-only">
+                  <i style="float:right" class="icon material-icons color-gray">more_vert</i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <p class="card-content-caption">What a nice photo i took yesterday!</p>
+            <img src="img/nature.jpg" width="100%" />
+            <p class="card-content-action">
+              <i class="icon material-icons">thumb_up</i> 112 &nbsp; &nbsp;
+              <i class="icon material-icons">chat</i> 43 &nbsp; &nbsp;
+              <i class="icon material-icons">remove_red_eye</i> 500 &nbsp; &nbsp;
+            </p>
+          </div>
+          <div class="card-footer">
+            <img src="img/avatar.jpg" width="34" height="34" />
+            <div class="commentbar">
+              <textarea class="resizable" placeholder="Add a comment..."></textarea>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Swiper -->
+        <!-- <div class="swiper-container swiper-init" data-slides-per-view="auto" data-space-between="20">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="margin padding" style="width:fit-content;border: 1px solid #ccc;">
+                <img style="width:100px" src="img/nature.jpg"/>
+                <p class="no-margin">John Doe</p>
+                <p class="no-margin">john.doe2555</p>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+      </div>
+      <div class="tab page-content" id="tab-2"></div>
+      <div class="tab page-content" id="tab-3"></div>
+      <div class="tab page-content" id="tab-4"></div>
+      <div class="tab page-content" id="tab-5"></div>
+    </div>
+  </div>
+</template>
+<script>
+  return {
+    on: {
+      pageInit: function () {
+        // var self = this;
+        // this.showStories();
+        // $$('#stories').prepend(`<div class="story"><a href="#"><span class="img your-story"><u style="background-image:url('img/avatar.jpg')"></u></span><span class="info"><strong>Add Story</strong><span class="time">1/1/1970</span></span></a><ul class="items"></ul></div>`);
+      },
+      tabInit: function () {
+        $$('#tab-1').html(`<div id="stories"></div>
+        <div class="card no-margin demo-facebook-card no-box-shadow">
+          <div class="card-header">
+            <div class="demo-facebook-avatar"><img src="img/avatar.jpg" width="34" height="34" />
+            </div>
+            <div class="row">
+              <div>
+                <div class="demo-facebook-name">John Doe</div>
+                <div class="demo-facebook-date">Monday at 2:15 PM</div>
+              </div>
+              <div>
+                <a href="#" data-popover=".demo-popover" class="popover-open link icon-only">
+                  <i style="float:right" class="icon material-icons color-gray">more_vert</i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <p class="card-content-caption">What a nice photo i took yesterday!</p>
+            <img src="img/nature.jpg" width="100%" />
+            <p class="card-content-action">
+              <i class="icon material-icons">thumb_up</i> 112 &nbsp; &nbsp;
+              <i class="icon material-icons">chat</i> 43 &nbsp; &nbsp;
+              <i class="icon material-icons">remove_red_eye</i> 500 &nbsp; &nbsp;
+            </p>
+          </div>
+          <div class="card-footer">
+            <img src="img/avatar.jpg" width="34" height="34" />
+            <div class="commentbar">
+              <textarea class="resizable" placeholder="Add a comment..."></textarea>
+            </div>
+          </div>
+        </div>`);
+        var self = this;
+        this.showStories();
+        $$('#stories').prepend(`<div class="story"><a href="#"><span class="img your-story"><u style="background-image:url('img/avatar.jpg')"></u></span><span class="info"><strong>Add Story</strong><span class="time">1/1/1970</span></span></a><ul class="items"></ul></div>`);
+      }
+    },
+    methods: {
+      showStories: function () {
+        var initDemo = function () {
+          var skin = 'Snapgram';
+          var skins = {
+            'Snapgram': {
+              'avatars': true,
+              'list': false,
+              'autoFullScreen': false,
+              'cubeEffect': true
+            }
+          };
+          var timeIndex = 0;
+          var shifts = [35, 60, 60 * 3, 60 * 60 * 2, 60 * 60 * 25, 60 * 60 * 24 * 4, 60 * 60 * 24 * 10];
+          var timestamp = function () {
+            var now = new Date();
+            var shift = shifts[timeIndex++] || 0;
+            var date = new Date(now - shift * 1000);
+            return date.getTime() / 1000;
+          };
+          var stories = new Zuck('stories', {
+            backNative: true,
+            previousTap: true,
+            autoFullScreen: skins[skin]['autoFullScreen'],
+            skin: skin,
+            avatars: skins[skin]['avatars'],
+            list: skins[skin]['list'],
+            cubeEffect: skins[skin]['cubeEffect'],
+            localStorage: true,
+            stories: [
+              {
+                id: "danish",
+                photo: "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/users/1.jpg",
+                name: "Danish",
+                lastUpdated: timestamp(),
+                items: [
+                  Zuck.buildItem("danish-1", "photo", 3, "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/1.jpg", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/1.jpg", '', false, false, timestamp()),
+                  Zuck.buildItem("danish-2", "video", 0, "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/2.mp4", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/2.jpg", '', false, false, timestamp()),
+                  Zuck.buildItem("danish-3", "photo", 3, "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/3.png", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/3.png", 'https://ramon.codes', 'Visit my Portfolio', false, timestamp())
+                ]
+              },
+              {
+                id: "gorillaz",
+                photo: "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/users/2.jpg",
+                name: "Gorillaz",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                  Zuck.buildItem("gorillaz-1", "video", 0, "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/4.mp4", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/4.jpg", '', false, false, timestamp()),
+                  Zuck.buildItem("gorillaz-2", "photo", 3, "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/5.jpg", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/5.jpg", '', false, false, timestamp()),
+                ]
+              },
+              {
+                id: "ladygaga",
+                photo: "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/users/3.jpg",
+                name: "Lady Gaga",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                  Zuck.buildItem("ladygaga-1", "photo", 5, "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/6.jpg", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/6.jpg", '', false, false, timestamp()),
+                  Zuck.buildItem("ladygaga-2", "photo", 3, "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/7.jpg", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/7.jpg", 'http://ladygaga.com', false, false, timestamp()),
+                ]
+              },
+              {
+                id: "starboy",
+                photo: "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/users/4.jpg",
+                name: "The Weeknd",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                  Zuck.buildItem("starboy-1", "photo", 5, "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/8.jpg", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/8.jpg", '', false, false, timestamp())
+                ]
+              },
+              {
+                id: "riversquomo",
+                photo: "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/users/5.jpg",
+                name: "Rivers Cuomo",
+                link: "",
+                lastUpdated: timestamp(),
+                items: [
+                  Zuck.buildItem("riverscuomo", "photo", 10, "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/9.jpg", "https://raw.githubusercontent.com/ramon82/assets/master/zuck.js/stories/9.jpg", '', false, false, timestamp())
+                ]
+              }
+            ]
+          });
+          var el = document.querySelectorAll('#skin option');
+          var total = el.length;
+          for (var i = 0; i < total; i++) {
+            var what = (skin == el[i].value) ? true : false;
+
+            if (what) {
+              el[i].setAttribute('selected', what);
+            } else {
+              el[i].removeAttribute('selected');
+            }
+          }
+          document.body.style.display = 'block';
+        };
+        initDemo();
+      },
+      logout: function () {
+        localStorage.removeItem("User");
+        app.views.main.router.navigate('/');
+      }
+    },
+  }
+</script>
