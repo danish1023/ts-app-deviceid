@@ -97,8 +97,7 @@ function putCountryCode(dial_code) {
 function shareDeviceID() {
   var message = $$('.output-container').text();
   var options = {
-    message: 'hi',
-    url: message,
+    message: message,
   };
   var onSuccess = function (result) { };
   var onError = function (msg) { };
