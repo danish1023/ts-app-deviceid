@@ -10,14 +10,14 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="theme-color" content="#2196f3">
   <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
-  <title>Tejoo</title>
+  <title>UDID</title>
   <link rel="stylesheet" href="framework7/css/framework7.css">
   <link rel="stylesheet" href="plugins/framework7-plugin-keypad/framework7.keypad.css">
   <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="css/custom.css">
 </head>
 
-<body class="color-theme-white">
+<body class="color-theme-purple">
   <div id="app">
     <div class="statusbar"></div>
     <!-- Left Panel -->
@@ -145,15 +145,45 @@
     </div>
     <div class="view view-main view-init ios-edges" data-url="/">
       <div class="page">
-        <div class="page-content bg-color-purple">
+        <div class="navbar">
+          <div class="navbar-inner sliding">
+            <div class="title color-white">Unique Device ID</div>
+            <div class="right">
+              <a href="#" data-popover=".dashboard-popover" class="popover-open link icon-only">
+                <i class="icon material-icons">more_vert</i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="popover dashboard-popover">
+          <div class="popover-inner">
+            <div class="list">
+              <ul>
+                <li><a onclick="shareApp()" class="color-black list-button item-link popover-close" href="#">Share</a></li>
+                <li><a class="color-black list-button item-link popover-close external" href="https://play.google.com/store/apps/details?id=com.techstreet.utility">Rate</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="page-content">
           <!-- Main Content Goes Here -->
           <div class="block text-align-center">
-            <div class="output-container">
-              Your Device ID Will Display Here
+            <div class="block block-strong no-hairlines no-margin">
+              <div class="output-container">
+                Your Device ID Will Display Here
+              </div>
+              <div id="content_copy" class="chip chip-outline" style="display:none" onclick="copyDeviceID()">
+                <i class="icon material-icons">content_copy</i>
+                <div class="chip-label">Copy</div>
+              </div>
+              <div id="content_share" class="chip chip-outline" style="display:none" onclick="shareDeviceID()">
+                <i class="icon material-icons">share</i>
+                <div class="chip-label">Share</div>
+              </div>
             </div>
-            <a id="shareicon" style="display:none;background:gray;width: 90px;margin: 0px auto;text-transform: none;" href="#" onclick="shareDeviceID()" class="font-16 color-black button button-fill button-round margin-bottom">Share</a>
-
-              <a style="background:#673AB7;width: 230px;margin: 0px auto;" href="#" onclick="getDeviceID()" class="font-16 color-black button button-big button-raised button-fill button-round">What is My Device ID?</a>
+            <a style="background:#673AB7;width: 230px;margin: 0px auto;" href="#" onclick="getDeviceID()"
+              class="font-16 color-black button button-big button-raised button-fill button-round">What is My Device
+              ID?</a>
           </div>
         </div>
       </div>

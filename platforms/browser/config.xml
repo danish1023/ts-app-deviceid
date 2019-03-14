@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.techstreet.utility" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Techstreet Utility</name>
+    <name>UDID</name>
     <description>
         A blank PhoneGap app.
     </description>
@@ -20,5 +20,5 @@
     <icon height="180" platform="ios" src="icon-60@3x.png" width="180" />
     <preference name="phonegap-version" value="cli-8.1.1" />
     <preference name="Orientation" value="portrait" />
-    <preference name="StatusBarBackgroundColor" value="#A9A9A9" />
+    <preference name="StatusBarBackgroundColor" value="#6F2755" />
 </widget>

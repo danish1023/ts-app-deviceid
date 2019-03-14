@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.techstreet.utility" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Techstreet</name>
+    <name>UDID</name>
     <description>
         A blank PhoneGap app.
     </description>
@@ -34,4 +34,5 @@
     <plugin name="cordova-plugin-whitelist" spec="~1.3.3" />
     <plugin name="cordova-plugin-uniquedeviceid" spec="~1.3.2" />
     <plugin name="cordova-plugin-x-socialsharing" spec="~5.4.4" />
+    <plugin name="cordova-clipboard" spec="~1.2.1" />
 </widget>

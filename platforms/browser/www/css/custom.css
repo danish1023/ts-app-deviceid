@@ -1,8 +1,7 @@
 .output-container{
-    border: 1px dotted #ffffff;
+    border: 1px dotted;
     padding: 16px;
     margin-bottom: 16px;
-    color: #ffffff;
 }
 .disabled-focus.item-input-wrap:after{
     background: #6F2755 !important;

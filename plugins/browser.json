@@ -24,6 +24,9 @@
         },
         "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "com.techstreet.utility"
+        },
+        "cordova-clipboard": {
+            "PACKAGE_NAME": "com.techstreet.utility"
         }
     },
     "dependent_plugins": {

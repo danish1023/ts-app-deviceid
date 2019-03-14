@@ -11,17 +11,17 @@ var AuthPassword = 'Tejoo@123';
 
 // Init App
 var app = new Framework7({
-  id: 'com.techstreet.tejoo',
+  id: 'com.techstreet.utility',
   root: '#app',
   theme: 'md',
-  name: 'Tejoo Fashions',
+  name: 'UDID',
   view: {
     animate: true,
     xhrCache: false,
     stackPages: true,
   },
   dialog: {
-    title: 'Tejoo Fashions',
+    title: 'UDID',
   },
   panel: {
     swipe: 'left',
@@ -94,6 +94,12 @@ function putCountryCode(dial_code) {
   $$('#login-form input[name=country_code]').val(code_arr[1]);
 }
 
+function copyDeviceID() {
+  var message = $$('.output-container').text();
+  cordova.plugins.clipboard.copy(message);
+  window.plugins.toast.show('Copied to clipboard', 'long', 'bottom');
+}
+
 function shareDeviceID() {
   var message = $$('.output-container').text();
   var options = {
@@ -104,11 +110,22 @@ function shareDeviceID() {
   window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
 }
 
+function shareApp() {
+  var url = 'https://play.google.com/store/apps/details?id=com.techstreet.utility';
+  var options = {
+    url: url,
+  };
+  var onSuccess = function (result) { };
+  var onError = function (msg) { };
+  window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
+}
+
 function getDeviceID() {
   window.plugins.uniqueDeviceID.get(success, fail);
   function success(uuid) {
     $$('.output-container').html(uuid);
-    $$('#shareicon').show();
+    $$('#content_copy').show();
+    $$('#content_share').show();
   };
   function fail() {
     
